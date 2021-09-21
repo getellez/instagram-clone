@@ -6,36 +6,79 @@
   max-width: 975px;
 }
 
+.Feed {
+  position: relative;
+}
+
 .Feed__stories {
   border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 15px 0 15px 15px;
+  padding: 20px 0 20px 20px;
   border-radius: 3px;
   background-color: white;
   overflow: scroll;
   display: flex;
   flex-wrap: nowrap;
+  max-height: 118px;
+  height: 118px;
+  scroll-behavior: smooth;
 }
 
 .Feed__stories ul {
   text-decoration: none;
   list-style: none;
   display: flex;
+  align-items: center;
 }
 
 .Feed__stories li {
-  margin-right: 20px;
+  margin-right: 17px;
 }
 
 .Feed__stories figure {
+  box-sizing: border-box;
+  border: 2px solid red;
   border-radius: 50%;
   overflow: hidden;
-  width: 56px;
-  height: 56px;
+  width: 66px;
+  height: 66px;
 }
 
 .Feed__stories img {
-  height: 56px;
+  box-sizing: border-box;
+  height: 66px;
+  width: 66px;
   object-fit: cover;
+}
+
+.Feed__arrow-container-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  padding: 5px;
+  top: 50%;
+  left: 4%;
+  transform: translate(-50%, -50%)
+}
+
+.Feed__arrow-container-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  padding: 5px;
+  top: 50%;
+  right: 0%;
+  transform: translate(-50%, -50%)
+}
+
+.Feed__arrow {
+  color: white;
+  font-size: 25px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .Post {
