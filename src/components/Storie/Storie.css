@@ -1,0 +1,19 @@
+.Feed__stories-item {
+  margin-right: 17px;
+}
+
+.Feed__stories-figure {
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 66px;
+  height: 66px;
+}
+
+.Feed__stories-img {
+  box-sizing: border-box;
+  height: 66px;
+  width: 66px;
+  object-fit: cover;
+}
