@@ -1,0 +1,97 @@
+.Post {
+  width: 100%;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.Post__header {
+  display: flex;
+  padding: 20px;
+}
+
+.Post__header-figure {
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid red;
+  overflow: hidden;
+}
+
+.Post__header-picture-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Post__header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Post__header-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.Post__header-username-container{
+  margin-bottom: 3px;
+}
+
+.Post__header-username {
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 2px;
+  text-decoration: none;
+  color: black;
+  
+}
+
+.Post__header-location {
+  padding: 2px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: black;
+}
+
+.Post__image {
+  width: inherit;
+}
+.Post__image-figure {
+  width: inherit;
+}
+.Post__image-img {
+  width: inherit;
+}
+
+.Post__controls {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  max-height: 44px;
+}
+
+.Post__controls-icon {
+  font-size: 2.4rem;
+}
+
+.Post__controls-interaction .Post__controls-icon {
+  margin-right: 15px;
+}
+
+.Post__comments {
+  
+}
+.Post__comments {
+
+}
+.Post__comments {
+
+}

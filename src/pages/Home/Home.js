@@ -1,11 +1,26 @@
 import React, { Component } from 'react'
+import PostList from '../../components/PostsList/PostList'
 import StoriesContainer from '../../components/StoriesContainer'
 
+import imageGerman from '../../components/StoriesContainer/assets/profile_picture_german.png'
 import './Home.css'
 
 export default class Home extends Component {
-  
+  constructor(props){
+    super(props)
+    this.state = { data: []}
+  }
   componentDidMount(){
+
+    const data = [
+      {
+        fullName: 'German Tellez Vanegas',
+        username: 'germantellezv',
+        location: 'Cartagena, Colombia',
+        imageUrl: imageGerman
+      }
+    ]
+    this.setState({data: data})
   }
 
   
@@ -21,12 +36,7 @@ export default class Home extends Component {
             
 
             <div className="Feed__posts">
-              <div className="Post">
-                <div className="Post__header"></div>
-                <div className="Post__image"></div>
-                <div className="Post__controls"></div>
-                <div className="Post__comments"></div>
-              </div>
+              <PostList data={this.state.data} />
             </div>
           </div>
 

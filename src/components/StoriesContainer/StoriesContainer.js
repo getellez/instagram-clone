@@ -13,7 +13,6 @@ export default class StoriesContainer extends Component {
   }
   
   handleScrollContainer(e){
-    console.log(e.target.scrollLeft);
     if (e.target.scrollLeft < 250) {
       const arrowLeft = document.querySelector('.Feed__arrow-container-left')
       arrowLeft.style.display = 'none';

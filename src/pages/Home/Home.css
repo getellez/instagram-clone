@@ -7,17 +7,20 @@
 }
 
 .Feed {
-  position: relative;
+  max-width: 614px;
 }
 
 .Feed__stories-container {
+  position: relative;
   max-height: 118px;
   height: 118px;
   width: 100%;
+  margin-bottom: 20px;
 }
 
-.Post {
+.Feed__posts {
   max-width: 614px;
-  width: 614px;
-  background-color: white;
+  box-sizing: border-box;
+  padding-bottom: 50px;
 }
+
