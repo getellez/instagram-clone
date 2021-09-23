@@ -7,6 +7,22 @@ import Storie from '../Storie'
 
 
 export default class StoriesContainer extends Component {
+  
+  componentDidMount() {
+
+  }
+  
+  handleScrollContainer(e){
+    console.log(e.target.scrollLeft);
+    if (e.target.scrollLeft < 250) {
+      const arrowLeft = document.querySelector('.Feed__arrow-container-left')
+      arrowLeft.style.display = 'none';
+    } else {
+      const arrowLeft = document.querySelector('.Feed__arrow-container-left')
+      arrowLeft.style.display = 'flex';
+    }
+  }
+
   handleScrollToLeft(e){
     const storiesContainer = document.querySelector('.Feed__stories')
     e.target.addEventListener('click', () => {
@@ -23,31 +39,31 @@ export default class StoriesContainer extends Component {
 
   render() {
     return (
-      <div className="Feed__stories">
-              <div className='Feed__arrow-container-left'>
-                <LeftCircleFilled onClick={this.handleScrollToLeft} className='Feed__arrow' />
-              </div>
-              <ul>
-                <Storie imgSrc={storiePhoto} alt="User" />
-                <Storie imgSrc={storiePhoto} alt="User" />
-                <Storie imgSrc={storiePhoto} alt="User" />
-                <Storie imgSrc={storiePhoto} alt="User" />
-                <Storie imgSrc={storiePhoto} alt="User" />
-                <Storie imgSrc={storiePhoto} alt="User" />
-                <Storie imgSrc={storiePhoto} alt="User" />
-                <Storie imgSrc={storiePhoto} alt="User" />
-                <Storie imgSrc={storiePhoto} alt="User" />
-                <Storie imgSrc={storiePhoto} alt="User" />
-                <Storie imgSrc={storiePhoto} alt="User" />
-                <Storie imgSrc={storiePhoto} alt="User" />
-                <Storie imgSrc={storiePhoto} alt="User" />
-                <Storie imgSrc={storiePhoto} alt="User" />
-                <Storie imgSrc={storiePhoto} alt="User" />
-              </ul>
-              <div className='Feed__arrow-container-right'>
-                <RightCircleFilled onClick={this.handleScrollToRight} className='Feed__arrow' />
-              </div>
-            </div>
+      <div className="Feed__stories" onScroll={this.handleScrollContainer} onLoad={this.handleScrollContainer}>
+        <div className='Feed__arrow-container-left'>
+          <LeftCircleFilled onClick={this.handleScrollToLeft} className='Feed__arrow' />
+        </div>
+        <ul>
+          <Storie imgSrc={storiePhoto} alt="User" />
+          <Storie imgSrc={storiePhoto} alt="User" />
+          <Storie imgSrc={storiePhoto} alt="User" />
+          <Storie imgSrc={storiePhoto} alt="User" />
+          <Storie imgSrc={storiePhoto} alt="User" />
+          <Storie imgSrc={storiePhoto} alt="User" />
+          <Storie imgSrc={storiePhoto} alt="User" />
+          <Storie imgSrc={storiePhoto} alt="User" />
+          <Storie imgSrc={storiePhoto} alt="User" />
+          <Storie imgSrc={storiePhoto} alt="User" />
+          <Storie imgSrc={storiePhoto} alt="User" />
+          <Storie imgSrc={storiePhoto} alt="User" />
+          <Storie imgSrc={storiePhoto} alt="User" />
+          <Storie imgSrc={storiePhoto} alt="User" />
+          <Storie imgSrc={storiePhoto} alt="User" />
+        </ul>
+        <div className='Feed__arrow-container-right'>
+          <RightCircleFilled onClick={this.handleScrollToRight} className='Feed__arrow' />
+        </div>
+      </div>
     )
   }
 }

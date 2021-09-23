@@ -4,11 +4,14 @@
   border-radius: 3px;
   background-color: white;
   overflow: scroll;
-  overflow-x: hidden;
+  overflow-x: scroll;
   display: flex;
   flex-wrap: nowrap;
   height: 100%;
   scroll-behavior: smooth;
+}
+.Feed__stories::-webkit-scrollbar {
+  display: none;
 }
 
 .Feed__stories ul {
