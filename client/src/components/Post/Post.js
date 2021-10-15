@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './Post.css'
 
@@ -10,6 +10,11 @@ import {
   } from '@ant-design/icons';
 
 export default function Post(props) {
+  
+  const [comments, setComments] = useState({
+    comments: []
+  })
+
   return (
     <div className="Post">
       <div className="Post__header">
@@ -47,7 +52,11 @@ export default function Post(props) {
           <SaveOutlined className="Post__controls-icon"/>
         </div>
       </div>
-      <div className="Post__comments"></div>
+      <div className="Post__comments">
+        <p>
+          <strong>{props.username}</strong> Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        </p>
+      </div>
     </div>
   )
 }
