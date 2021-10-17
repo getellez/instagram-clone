@@ -1,0 +1,101 @@
+import React, { useState } from 'react'
+import axios from 'axios'
+import './CreatePost.css'
+
+export default function CreatePost() {
+  
+  const [fileUploaded, setFileUploaded] = useState(false)
+  const [post, setPost] = useState({
+    filename: '',
+    file: '',
+    srcPreview: '',
+    description: ''
+  })
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    const formData = new FormData()
+    formData.append('file', post.file)
+    formData.append('description', post.description)
+    
+    try {
+      const res = await axios.post('http://localhost:3001/api/posts/', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
+    
+      setPost({
+        ...post,
+        srcPreview: res.data.data.filePath
+      })
+      console.log(res.data);
+      setFileUploaded(true)
+
+    } catch (error) {
+      console.log(error);
+      console.log('💥 Hubo un problema con el server...');
+    }
+  }
+
+  const handleChange = ({ target }) => {
+    setPost({
+      ...post,
+      [target.name]: target.value
+    })
+  }
+
+  const handleFileChange = ({ target }) => {
+    setPost({
+      ...post,
+      filename: target.files[0].name,
+      file: target.files[0],
+    })
+  }
+
+  return (
+    <div className="CreatePost">
+      
+      <div className='Grid'>
+        
+        <div className="Preview">
+          <h1 className='Preview__title'>Preview</h1>
+          {post.srcPreview && (
+            <figure className='Previeww__figure'>
+              <img className='Preview__image' src={post.srcPreview} alt="preview" />
+              <small>{ post.description && post.description }</small>
+            </figure>
+          )}
+        </div>
+        
+        <div className="Form">
+          <p className="Form__title">Add new post</p>
+          
+          <form onSubmit={handleSubmit}>
+            <div className='Form_element'>
+              <label>Description</label>
+              <input type='text' name='description' value={post.description} onChange={handleChange} />
+            </div>
+            <div className='Form_element'>
+              <label>Upload image</label>
+              <input id='Post__photo' type="file" name="file" onChange={handleFileChange} />
+              <label htmlFor='Post__photo'>{post.filename}</label>
+            </div>
+            <button type="submit"> Upload </button>
+
+            {fileUploaded && (
+              <div className='Form__message'>
+                The post was created successfully
+              </div>
+            )}
+
+          </form>
+
+        </div>
+
+      </div>
+
+</div>
+  )
+}

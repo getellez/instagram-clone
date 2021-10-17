@@ -3,6 +3,7 @@ import PostList from '../../components/PostsList/PostList'
 import StoriesContainer from '../../components/StoriesContainer'
 
 import imageGerman from '../../components/StoriesContainer/assets/profile_picture_german.png'
+
 import './Home.css'
 
 export default class Home extends Component {
@@ -26,7 +27,7 @@ export default class Home extends Component {
   
   render() {
     return (
-      <>
+      <div className="Home">
         <div className="Grid">
           
           <div className='Feed'>
@@ -46,7 +47,7 @@ export default class Home extends Component {
           </div>
 
         </div>
-      </>
+      </div>
     )
   }
 }

@@ -40,7 +40,7 @@ export default class StoriesContainer extends Component {
     return (
       <div className="Feed__stories" onScroll={this.handleScrollContainer} onLoad={this.handleScrollContainer}>
         <div className='Feed__arrow-container-left'>
-          <LeftCircleFilled onClick={this.handleScrollToLeft} className='Feed__arrow' />
+          <LeftCircleFilled onClick={this.handleScrollToLeft} color='white' className='Feed__arrow' />
         </div>
         <ul>
           <Storie imgSrc={storiePhoto} alt="User" />

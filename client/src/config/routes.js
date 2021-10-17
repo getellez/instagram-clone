@@ -3,5 +3,6 @@ module.exports =  {
   home: '/',
   messages: '/direct/inbox',
   profile: '/:username',
-  explore: '/explore'
+  explore: '/explore',
+  createPost: '/posts/add'
 }

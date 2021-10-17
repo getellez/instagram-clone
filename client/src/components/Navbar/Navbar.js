@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
-
 
 // Assets
 import { 
   HomeOutlined, 
   MessageOutlined, 
   CompassOutlined, 
-  HeartOutlined, 
+  HeartOutlined,
+  CloudUploadOutlined, 
   SmileOutlined } from '@ant-design/icons';
 
 import instagramLogo from './assets/logo-instagram.png'
 
 import './Navbar.css'
 import { Link } from 'react-router-dom';
-import { home } from '../../config/routes';
+import { createPost, home } from '../../config/routes';
 
 export default class Navbar extends Component {
   render() {
@@ -56,7 +55,12 @@ export default class Navbar extends Component {
                 </Link>
               </li>
               <li className='Navbar__controls-item'>
-                <Link to=''>
+                <Link to={createPost}>
+                  <CloudUploadOutlined />
+                </Link>
+              </li>
+              <li className='Navbar__controls-item'>
+                <Link to={'/germantellezv'}>
                   <SmileOutlined />
                 </Link>
               </li>

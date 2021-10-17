@@ -1,4 +1,4 @@
-.Grid {
+.Home .Grid {
   display: grid;
   grid-template-columns: 70% 30%;
   margin: 10px auto 0 auto;
@@ -6,11 +6,11 @@
   max-width: 975px;
 }
 
-.Feed {
+.Home .Feed {
   max-width: 614px;
 }
 
-.Feed__stories-container {
+.Home .Feed__stories-container {
   position: relative;
   max-height: 118px;
   height: 118px;
@@ -18,7 +18,7 @@
   margin-bottom: 20px;
 }
 
-.Feed__posts {
+.Home .Feed__posts {
   max-width: 614px;
   box-sizing: border-box;
   padding-bottom: 50px;

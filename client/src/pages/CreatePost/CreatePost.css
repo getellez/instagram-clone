@@ -1,0 +1,47 @@
+.CreatePost .Grid {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  margin: 10px auto 0 auto;
+  width: 975px;
+  max-width: 975px;
+}
+
+.CreatePost .Preview {
+  padding: 20px;
+}
+
+.CreatePost .Previeww__figure {
+  word-wrap: break-word;
+}
+
+.CreatePost .Preview__image {
+  width: 100%;
+}
+
+.CreatePost .Form {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 1.4rem;
+  padding: 20px;
+}
+
+.CreatePost .Form .Form_element {
+  margin: 20px 0;
+}
+
+.CreatePost .Form label {
+  display: block;
+}
+
+.CreatePost .Form__title {
+  font-size: 2.2rem;
+}
+
+.CreatePost .Form__message {
+  padding: 10px;
+  width: 100%;
+  background-color: #d4edda;
+  margin-top: 50px;
+  border-radius: 5px;
+}
