@@ -54,7 +54,7 @@ export default function Post(props) {
       </div>
       <div className="Post__comments">
         <p>
-          <strong>{props.username}</strong> Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          <strong>{props.username}</strong> {props.description} 
         </p>
       </div>
     </div>

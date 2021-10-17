@@ -11,8 +11,8 @@ export default class PostList extends Component {
             return <Post key={index} 
             username={post.username} 
             location={post.location}
-            imageUrl={post.imageUrl} 
-            fullname={post.fullName} />
+            description={post.description}
+            imageUrl={post.photoUrl} />
           })
         }
       </>

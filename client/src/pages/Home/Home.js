@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PostList from '../../components/PostsList/PostList'
 import StoriesContainer from '../../components/StoriesContainer'
-
+import axios from 'axios'
 import imageGerman from '../../components/StoriesContainer/assets/profile_picture_german.png'
 
 import './Home.css'
@@ -9,19 +9,12 @@ import './Home.css'
 export default class Home extends Component {
   constructor(props){
     super(props)
-    this.state = { data: []}
+    this.state = { posts: []}
   }
-  componentDidMount(){
-
-    const data = [
-      {
-        fullName: 'German Tellez Vanegas',
-        username: 'germantellezv',
-        location: 'Cartagena, Colombia',
-        imageUrl: imageGerman
-      }
-    ]
-    this.setState({data: data})
+  async componentDidMount(){
+    const res = await axios.get('http://localhost:3001/api/posts/germantellezv')
+    console.log(res.data.data);
+    this.setState({ posts: res.data.data })
   }
 
   
@@ -37,7 +30,7 @@ export default class Home extends Component {
             
 
             <div className="Feed__posts">
-              <PostList data={this.state.data} />
+              <PostList data={this.state.posts} />
             </div>
           </div>
 
