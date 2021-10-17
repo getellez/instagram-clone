@@ -1,13 +1,24 @@
 const User = require('../models/users')
 
-const createPost = (req, res, next) => {}
+const createUser = async (req, res, next) => {
+  try {
+    const { data } = req.body
+    await User.create(data)
 
-const getPost = (req, res, next) => {}
+    res.status(201).send({
+      status: 'ok',
+      code: 201,
+      data
+    })
+  } catch (error) {
+    next(error)
+  }
+}
 
 const getUser = async (req, res, next) => {
   try {
     const { username } = req.params
-    const users = await User.find({ username })
+    const users = await User.findOne({ username })
     return res.send({
       code: 200,
       status: 'ok',
@@ -19,7 +30,6 @@ const getUser = async (req, res, next) => {
 }
 
 module.exports = {
-  createPost,
-  getPost,
+  createUser,
   getUser
 }

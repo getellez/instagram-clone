@@ -1,10 +1,10 @@
 const { Schema, model } = require('mongoose');
 
 const userSchema = Schema({
-  _id: Schema.Types.ObjectId,
   username: String,
   fullName: String,
-  birthdate: Date
+  birthdate: Date,
+  phone: String
 }, {
   timestamps: {
     createdAt: 'created_at'
