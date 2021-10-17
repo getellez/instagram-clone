@@ -39,7 +39,7 @@ const createPost = async (req, res, next) => {
 const getPostsByUsername = async (req, res, next) => {
   const username = req.params.username
   const posts = await Post.find({username})
-  console.log(posts);
+
   res.status(200).send({
     status: 'ok',
     code: 200,

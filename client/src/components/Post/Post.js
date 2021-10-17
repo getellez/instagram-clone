@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import './Post.css'
 
@@ -10,10 +10,6 @@ import {
   } from '@ant-design/icons';
 
 export default function Post(props) {
-  
-  const [comments, setComments] = useState({
-    comments: []
-  })
 
   return (
     <div className="Post">
