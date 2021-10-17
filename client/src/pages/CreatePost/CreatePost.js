@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import './CreatePost.css'
+import { Button } from '../../components/StyledComponents/Button'
+import { Input } from '../../components/StyledComponents/Input'
 
 export default function CreatePost() {
   
@@ -75,14 +77,16 @@ export default function CreatePost() {
           <form onSubmit={handleSubmit}>
             <div className='Form_element'>
               <label>Description</label>
-              <input type='text' name='description' value={post.description} onChange={handleChange} />
+              <Input type='text' name='description' value={post.description} onChange={handleChange} />
+              {/* <input type='text' name='description' value={post.description} onChange={handleChange} /> */}
             </div>
             <div className='Form_element'>
               <label>Upload image</label>
               <input id='Post__photo' type="file" name="file" onChange={handleFileChange} />
               <label htmlFor='Post__photo'>{post.filename}</label>
             </div>
-            <button type="submit"> Upload </button>
+            
+            <Button type="submit"> Upload </Button>
 
             {fileUploaded && (
               <div className='Form__message'>
