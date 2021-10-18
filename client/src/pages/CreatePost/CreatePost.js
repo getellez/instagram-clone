@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import './CreatePost.css'
 import { Button } from '../../components/StyledComponents/Button'
 import { Input } from '../../components/StyledComponents/Input'
+import { createPost } from '../../utils/api'
 
 export default function CreatePost() {
   
@@ -22,21 +22,22 @@ export default function CreatePost() {
     formData.append('description', post.description)
     
     try {
-      const res = await axios.post('http://localhost:3001/api/posts/', formData, {
+      const params = {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
-      })
-    
+      }
+      const res = await createPost(formData, params)
+      
       setPost({
         ...post,
-        srcPreview: res.data.data.filePath
+        srcPreview: res.data.filePath
       })
-      console.log(res.data);
+      
       setFileUploaded(true)
 
     } catch (error) {
-      console.log(error);
+      
       console.log('💥 Hubo un problema con el server...');
     }
   }

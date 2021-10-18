@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { createPost, home, profile } from './config/routes';
+import { createPostUrl, homeUrl, profileUrl } from './config/routes';
 
 import CustomLayout from './components/CustomLayout';
 import NotFound from './pages/NotFound';
@@ -14,9 +14,9 @@ function App() {
     <BrowserRouter>
       <CustomLayout>
         <Switch>
-          <Route exact path={home} component={Home} />
-          <Route exact path={profile} component={Profile} />
-          <Route exact path={createPost} component={CreatePost} />
+          <Route exact path={homeUrl} component={Home} />
+          <Route exact path={profileUrl} component={Profile} />
+          <Route exact path={createPostUrl} component={CreatePost} />
           <Route component={NotFound} />
         </Switch>
       </CustomLayout>

@@ -4,6 +4,7 @@ import StoriesContainer from '../../components/StoriesContainer'
 import axios from 'axios'
 
 import './Home.css'
+import { getPostsByUsername } from '../../utils/api'
 
 export default class Home extends Component {
   constructor(props){
@@ -11,8 +12,8 @@ export default class Home extends Component {
     this.state = { posts: []}
   }
   async componentDidMount(){
-    const res = await axios.get('http://localhost:3001/api/posts/germantellezv')
-    this.setState({ posts: res.data.data })
+    const res = await getPostsByUsername('germantellezv', {})
+    this.setState({ posts: res.data.reverse() })
   }
 
   

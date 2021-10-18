@@ -1,4 +1,8 @@
-.Header__bio-username {
+.Profile .Header {
+  display: flex;
+}
+
+.Profile .Header__bio-username {
   display: flex;
   flex-direction: row;
   align-items: center;

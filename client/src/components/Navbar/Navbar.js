@@ -13,7 +13,7 @@ import instagramLogo from './assets/logo-instagram.png'
 
 import './Navbar.css'
 import { Link } from 'react-router-dom';
-import { createPost, home } from '../../config/routes';
+import { createPostUrl, homeUrl } from '../../config/routes';
 
 export default class Navbar extends Component {
   render() {
@@ -22,7 +22,7 @@ export default class Navbar extends Component {
         <div className="Navbar__container">
           <div className="Navbar__logo">
             <picture>
-              <Link to={home}>
+              <Link to={homeUrl}>
                 <img src={instagramLogo} alt="Instagram logo" />
               </Link>
             </picture>
@@ -35,7 +35,7 @@ export default class Navbar extends Component {
           <div className="Navbar__controls">
             <ul>
               <li className='Navbar__controls-item'>
-                <Link to={home}>
+                <Link to={homeUrl}>
                   <HomeOutlined />
                 </Link>
               </li>
@@ -55,7 +55,7 @@ export default class Navbar extends Component {
                 </Link>
               </li>
               <li className='Navbar__controls-item'>
-                <Link to={createPost}>
+                <Link to={createPostUrl}>
                   <CloudUploadOutlined />
                 </Link>
               </li>
