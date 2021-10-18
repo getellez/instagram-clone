@@ -4,7 +4,8 @@ const userSchema = Schema({
   username: String,
   fullName: String,
   birthdate: Date,
-  phone: String
+  phone: String,
+  profilePhotoUrl: String
 }, {
   timestamps: {
     createdAt: 'created_at'
