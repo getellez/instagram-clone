@@ -1,9 +1,87 @@
-.Profile .Header {
-  display: flex;
+.Profile .Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 10px auto 0 auto;
+  width: 975px;
+  max-width: 975px;
 }
 
-.Profile .Header__bio-username {
+.Profile .Header {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding: 20px 0;
+  margin-bottom: 50px;
+}
+.Profile .Header__image-container {
+  /* padding: 50px; */
+  text-align: center;
+}
+.Profile .Header__img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Profile .Header__bio-container {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.Profile .Header__bio-username {
+  font-size: 2.8rem;
+
+}
+
+.Profile .Header__bio-edit {
+  margin: 0 20px;
+}
+
+.Profile .Header__bio-edit button {
+  padding: 5px 10px;
+}
+
+.Profile .Header__bio-settings {
+  font-size: 2rem;
+}
+
+.Profile .Header__bio-counters {
+  margin-top: 20px;
+}
+
+.Profile .Header__bio-counters ul {
+  display: flex;
+}
+
+.Profile .Header__bio-counters li {
+  list-style: none;
+  margin-right: 40px;
+  font-size: 1.6rem;
+}
+
+.Profile .Header__bio-wrapper {
+  margin-top: 20px;
+}
+
+.Profile .Header__bio-name {
+  font-size: 1.6rem;
+}
+
+.Profile .Header__bio-description {
+  font-size: 1.6rem;
+}
+
+.Profile .Posts {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+  text-align: center;
+}
+
+.Profile .Post__image {
+  width: 100%;
+  height: 293px;
+  object-fit: cover;
 }

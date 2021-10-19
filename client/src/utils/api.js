@@ -4,6 +4,12 @@ const api = axios.create({
   baseURL:  process.env.REACT_APP_API_URL
 })
 
+export const getUser = async (username, params) => {
+  params = params || {}
+  const res = await api.get(`/users/${username}`, params)
+  return res.data
+}
+
 export const getPostsByUsername = async (username, params) => {
   params = params || {}
   const res = await api.get(`/posts/${username}`, params)
