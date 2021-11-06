@@ -43,6 +43,19 @@
   padding: 5px 10px;
 }
 
+.Profile .Header__bio-edit a {
+  text-decoration: none;
+}
+
+.Profile .Header__bio-edit a,
+.Profile .Header__bio-edit a:hover,
+.Profile .Header__bio-edit a:link,
+.Profile .Header__bio-edit a:visited,
+.Profile .Header__bio-edit a:focus,
+.Profile .Header__bio-edit a:active {
+  color: black;
+}
+
 .Profile .Header__bio-settings {
   font-size: 2rem;
 }

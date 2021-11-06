@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PostList from '../../components/PostsList/PostList'
 import StoriesContainer from '../../components/StoriesContainer'
-import axios from 'axios'
 
 import './Home.css'
 import { getPostsByUsername } from '../../utils/api'
@@ -16,7 +15,6 @@ export default class Home extends Component {
     this.setState({ posts: res.data.reverse() })
   }
 
-  
   render() {
     return (
       <div className="Home">

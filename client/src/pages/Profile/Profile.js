@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { getPostsByUsername, getUser } from '../../utils/api'
+import { Link } from 'react-router-dom'
+// import { editProfileUrl } from '../../config/routes'
+import { getPostsByUsername } from '../../utils/api'
 import './Profile.css'
 
 export default function Profile() {
 
-  const [userInfo, setUserInfo] = useState({})
+  // const [userInfo, setUserInfo] = useState({})
   const [posts, setPosts] = useState([])
   
 
@@ -13,10 +15,10 @@ export default function Profile() {
     setPosts(res.data)
   }
 
-  const getUserData = async () => {
+  /* const getUserData = async () => {
     const res = await getUser('germantellezv')
     setUserInfo(res.data)
-  }
+  } */
 
 
   useEffect( () => {
@@ -41,7 +43,7 @@ export default function Profile() {
             <div className="Header__bio-container">
               <div className='Header__bio-username'>germantellezv</div>
               <div className='Header__bio-edit'>
-                <button><strong>Edit Profile</strong></button>
+                <button><strong><Link to={'/germantellezv/edit'}>Edit Profile</Link></strong></button>
               </div>
               <div className='Header__bio-settings'>
                 ⚙️

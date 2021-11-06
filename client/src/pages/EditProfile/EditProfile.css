@@ -1,0 +1,26 @@
+.EditProfile .Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 975px;
+  width: 100%;
+  margin: 10px auto 0 auto;
+}
+
+.EditProfile .EditProfile__panel{
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 20px;
+}
+
+.EditProfile .Form .Form__control{
+  padding: 10px 0;
+}
+
+.EditProfile .Form .Form__genre {
+  width: 200px;
+}
+
+.EditProfile .ErrorMessage {
+  color: red;
+}

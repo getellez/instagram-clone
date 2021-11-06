@@ -1,8 +1,9 @@
 module.exports =  {
   // apiUrl: process.env.REACT_APP_API_URL,
   homeUrl: '/',
-  messagesUrl: '/direct/inbox',
+  editProfileUrl: '/:username/edit',
   profileUrl: '/:username',
+  messagesUrl: '/direct/inbox',
   exploreUrl: '/explore',
-  createPostUrl: '/posts/add'
+  createPostUrl: '/posts/add',
 }
