@@ -7,6 +7,6 @@ module.exports = {
   awsS3BucketName: process.env.AWS_S3_BUCKET_NAME,
   mongoHost: 'localhost' || process.env.MONGO_HOST,
   mongoPort: '27017' || process.env.MONGO_PORT,
-  mongoDatabase: 'instagram-clone' || process.env.MONGO_DATABASE,
+  mongoDatabase: 'instagram-clone' || process.env.MONGO_DATABASE
 
 }

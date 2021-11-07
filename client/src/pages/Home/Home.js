@@ -6,26 +6,27 @@ import './Home.css'
 import { getPostsByUsername } from '../../utils/api'
 
 export default class Home extends Component {
-  constructor(props){
+  constructor (props) {
     super(props)
-    this.state = { posts: []}
+    this.state = { posts: [] }
   }
-  async componentDidMount(){
+
+  async componentDidMount () {
     const res = await getPostsByUsername('germantellezv', {})
     this.setState({ posts: res.data.reverse() })
   }
 
-  render() {
+  render () {
     return (
-      <div className="Home">
-        <div className="Grid">
-          
+      <div className='Home'>
+        <div className='Grid'>
+
           <div className='Feed'>
-            <div className="Feed__stories-container">
+            <div className='Feed__stories-container'>
               <StoriesContainer />
             </div>
-            
-            <div className="Feed__posts">
+
+            <div className='Feed__posts'>
               <PostList data={this.state.posts} />
             </div>
           </div>

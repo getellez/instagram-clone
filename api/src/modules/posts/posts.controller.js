@@ -1,6 +1,5 @@
 const PostModel = require('../../models/posts')
 const postService = require('./posts.services')
-const postStore = require('./posts.store')
 const responseHandler = require('../../utils/responseHandler')
 
 const createPost = async (req, res, next) => {
@@ -17,7 +16,7 @@ const createPost = async (req, res, next) => {
 const getPostsByUsername = async (req, res, next) => {
   try {
     const username = req.params.username
-    const posts = await postService.getPost(PostModel, {username})
+    const posts = await postService.getPost(PostModel, { username })
     res.status(200).send({ status: 'ok', code: 200, data: posts })
   } catch (error) {
     next(error)

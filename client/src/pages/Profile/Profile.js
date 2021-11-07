@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom'
 import { getPostsByUsername } from '../../utils/api'
 import './Profile.css'
 
-export default function Profile() {
-
+export default function Profile () {
   // const [userInfo, setUserInfo] = useState({})
   const [posts, setPosts] = useState([])
-  
 
   const loadPostsByUsername = async () => {
     const res = await getPostsByUsername('germantellezv')
@@ -20,36 +18,32 @@ export default function Profile() {
     setUserInfo(res.data)
   } */
 
-
-  useEffect( () => {
+  useEffect(() => {
     loadPostsByUsername()
   }, [])
 
-
-
-
   return (
-    <div className="Profile">
+    <div className='Profile'>
 
       <div className='Grid'>
 
-        <div className="Header">
-          <div className="Header__image-container">
+        <div className='Header'>
+          <div className='Header__image-container'>
             <figure className='Header__figure'>
-              <img className='Header__img' src="https://instagram-clone-germantellezv.s3.sa-east-1.amazonaws.com/germantellezv_182078343_1124520088029642_3286341659106403037_n.jpeg" alt="" />
+              <img className='Header__img' src='https://instagram-clone-germantellezv.s3.sa-east-1.amazonaws.com/germantellezv_182078343_1124520088029642_3286341659106403037_n.jpeg' alt='' />
             </figure>
           </div>
-          <div className="Header__bio">
-            <div className="Header__bio-container">
+          <div className='Header__bio'>
+            <div className='Header__bio-container'>
               <div className='Header__bio-username'>germantellezv</div>
               <div className='Header__bio-edit'>
-                <button><strong><Link to={'/germantellezv/edit'}>Edit Profile</Link></strong></button>
+                <button><strong><Link to='/germantellezv/edit'>Edit Profile</Link></strong></button>
               </div>
               <div className='Header__bio-settings'>
                 ⚙️
               </div>
             </div>
-            <div className="Header__bio-counters">
+            <div className='Header__bio-counters'>
               <ul>
                 <li>45 posts</li>
                 <li>455 followers</li>
@@ -63,20 +57,18 @@ export default function Profile() {
           </div>
         </div>
 
-        <div className="Posts">
+        <div className='Posts'>
           {
             posts && (
-              
+
               posts.map(post => {
-                
                 return (
                   <div key={post._id} className='Post__container'>
                     <figure className='Post__figure'>
-                      <img className='Post__image' src={post.photoUrl} alt="" />
+                      <img className='Post__image' src={post.photoUrl} alt='' />
                     </figure>
                   </div>
                 )
-
               })
 
             )

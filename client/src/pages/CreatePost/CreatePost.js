@@ -4,8 +4,7 @@ import { Button } from '../../components/StyledComponents/Button'
 import { Input } from '../../components/StyledComponents/Input'
 import { createPost } from '../../utils/api'
 
-export default function CreatePost() {
-  
+export default function CreatePost () {
   const [fileUploaded, setFileUploaded] = useState(false)
   const [post, setPost] = useState({
     filename: '',
@@ -20,7 +19,7 @@ export default function CreatePost() {
     const formData = new FormData()
     formData.append('file', post.file)
     formData.append('description', post.description)
-    
+
     try {
       const params = {
         headers: {
@@ -28,17 +27,15 @@ export default function CreatePost() {
         }
       }
       const res = await createPost(formData, params)
-      
+
       setPost({
         ...post,
         srcPreview: res.data.filePath
       })
-      
-      setFileUploaded(true)
 
+      setFileUploaded(true)
     } catch (error) {
-      
-      console.log('💥 Hubo un problema con el server...');
+      console.log('💥 Hubo un problema con el server...')
     }
   }
 
@@ -53,28 +50,28 @@ export default function CreatePost() {
     setPost({
       ...post,
       filename: target.files[0].name,
-      file: target.files[0],
+      file: target.files[0]
     })
   }
 
   return (
-    <div className="CreatePost">
-      
+    <div className='CreatePost'>
+
       <div className='Grid'>
-        
-        <div className="Preview">
+
+        <div className='Preview'>
           <h1 className='Preview__title'>Preview</h1>
           {post.srcPreview && (
             <figure className='Previeww__figure'>
-              <img className='Preview__image' src={post.srcPreview} alt="preview" />
-              <small>{ post.description && post.description }</small>
+              <img className='Preview__image' src={post.srcPreview} alt='preview' />
+              <small>{post.description && post.description}</small>
             </figure>
           )}
         </div>
-        
-        <div className="Form">
-          <p className="Form__title">Add new post</p>
-          
+
+        <div className='Form'>
+          <p className='Form__title'>Add new post</p>
+
           <form onSubmit={handleSubmit}>
             <div className='Form_element'>
               <label>Description</label>
@@ -83,11 +80,11 @@ export default function CreatePost() {
             </div>
             <div className='Form_element'>
               <label>Upload image</label>
-              <input id='Post__photo' type="file" name="file" onChange={handleFileChange} />
+              <input id='Post__photo' type='file' name='file' onChange={handleFileChange} />
               <label htmlFor='Post__photo'>{post.filename}</label>
             </div>
-            
-            <Button type="submit"> Upload </Button>
+
+            <Button type='submit'> Upload </Button>
 
             {fileUploaded && (
               <div className='Form__message'>
@@ -101,6 +98,6 @@ export default function CreatePost() {
 
       </div>
 
-</div>
+    </div>
   )
 }

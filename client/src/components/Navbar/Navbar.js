@@ -1,38 +1,39 @@
 import React, { Component } from 'react'
 
 // Assets
-import { 
-  HomeOutlined, 
-  MessageOutlined, 
-  CompassOutlined, 
+import {
+  HomeOutlined,
+  MessageOutlined,
+  CompassOutlined,
   HeartOutlined,
-  CloudUploadOutlined, 
-  SmileOutlined } from '@ant-design/icons';
+  CloudUploadOutlined,
+  SmileOutlined
+} from '@ant-design/icons'
 
 import instagramLogo from './assets/logo-instagram.png'
 
 import './Navbar.css'
-import { Link } from 'react-router-dom';
-import { createPostUrl, homeUrl } from '../../config/routes';
+import { Link } from 'react-router-dom'
+import { createPostUrl, homeUrl } from '../../config/routes'
 
 export default class Navbar extends Component {
-  render() {
+  render () {
     return (
-      <div className="Navbar">
-        <div className="Navbar__container">
-          <div className="Navbar__logo">
+      <div className='Navbar'>
+        <div className='Navbar__container'>
+          <div className='Navbar__logo'>
             <picture>
               <Link to={homeUrl}>
-                <img src={instagramLogo} alt="Instagram logo" />
+                <img src={instagramLogo} alt='Instagram logo' />
               </Link>
             </picture>
           </div>
 
-          <div className="Navbar__search">
-            <input type="text" name="search" placeholder={`🔎 Search`} />
+          <div className='Navbar__search'>
+            <input type='text' name='search' placeholder='🔎 Search' />
           </div>
 
-          <div className="Navbar__controls">
+          <div className='Navbar__controls'>
             <ul>
               <li className='Navbar__controls-item'>
                 <Link to={homeUrl}>
@@ -60,7 +61,7 @@ export default class Navbar extends Component {
                 </Link>
               </li>
               <li className='Navbar__controls-item'>
-                <Link to={'/germantellezv'}>
+                <Link to='/germantellezv'>
                   <SmileOutlined />
                 </Link>
               </li>
@@ -69,7 +70,7 @@ export default class Navbar extends Component {
         </div>
 
       </div>
-      
+
     )
   }
 }

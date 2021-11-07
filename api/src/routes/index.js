@@ -6,4 +6,4 @@ const handleRoutes = (app) => {
   app.use('/api/posts', postRoutes)
 }
 
-module.exports = handleRoutes;
+module.exports = handleRoutes

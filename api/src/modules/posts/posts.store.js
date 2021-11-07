@@ -10,5 +10,5 @@ const getPosts = async (PostModel, condition) => {
 
 module.exports = {
   createPost,
-  getPosts,
+  getPosts
 }

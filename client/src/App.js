@@ -1,16 +1,15 @@
-import React from 'react';
+import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { createPostUrl, homeUrl, profileUrl, editProfileUrl } from './config/routes';
+import { createPostUrl, homeUrl, profileUrl, editProfileUrl } from './config/routes'
 
-import CustomLayout from './components/CustomLayout';
-import NotFound from './pages/NotFound';
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import CreatePost from './pages/CreatePost';
-import EditProfile from './pages/EditProfile';
+import CustomLayout from './components/CustomLayout'
+import NotFound from './pages/NotFound'
+import Home from './pages/Home'
+import Profile from './pages/Profile'
+import CreatePost from './pages/CreatePost'
+import EditProfile from './pages/EditProfile'
 
-
-function App() {
+function App () {
   return (
     <BrowserRouter>
       <CustomLayout>
@@ -23,7 +22,7 @@ function App() {
         </Switch>
       </CustomLayout>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App

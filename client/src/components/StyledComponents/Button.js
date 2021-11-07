@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { colors } from '../../config/theme'
 
 export const Button = styled.button`
-  background-color: ${props => props.color? colors[props.color] : colors['primary']};
+  background-color: ${props => props.color ? colors[props.color] : colors.primary};
   border: 1px solid transparent;
   border-radius: .4rem;
   color: ${colors.white};
@@ -15,4 +15,3 @@ export const Button = styled.button`
   text-decoration: none;
   vertical-align: middle;
 `
-

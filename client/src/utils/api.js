@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL:  process.env.REACT_APP_API_URL
+  baseURL: process.env.REACT_APP_API_URL
 })
 
 export const getUser = async (username, params) => {
@@ -21,4 +21,3 @@ export const createPost = async (payload, params) => {
   const res = await api.post('/posts', payload, params)
   return res.data
 }
-

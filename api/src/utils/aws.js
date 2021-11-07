@@ -6,9 +6,8 @@ const uploadFileToS3Bucket = (file) => {
     Bucket: config.awsS3BucketName,
     Key: file.name,
     Body: file.data
-  };
+  }
   return new Promise((resolve, reject) => {
-    
     const s3 = new AWS.S3({
       accessKeyId: config.awsAccessKeyId,
       secretAccessKey: config.awsSecretKey
@@ -20,7 +19,6 @@ const uploadFileToS3Bucket = (file) => {
       }
       resolve(data)
     })
-
   })
 }
 

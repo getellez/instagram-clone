@@ -17,7 +17,6 @@ const getPost = async (PostModel, condition) => {
   return post
 }
 
-
 module.exports = {
   createPost,
   getPost
