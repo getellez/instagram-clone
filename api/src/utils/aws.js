@@ -1,7 +1,12 @@
 const AWS = require('aws-sdk')
 const config = require('../../config/index')
 
-const uploadFileToS3Bucket = (params) => {
+const uploadFileToS3Bucket = (file) => {
+  const params = {
+    Bucket: config.awsS3BucketName,
+    Key: file.name,
+    Body: file.data
+  };
   return new Promise((resolve, reject) => {
     
     const s3 = new AWS.S3({

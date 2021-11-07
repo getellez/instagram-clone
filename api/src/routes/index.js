@@ -1,5 +1,5 @@
-const userRoutes = require('./users')
-const postRoutes = require('./posts')
+const userRoutes = require('../modules/user/users.routes')
+const postRoutes = require('../modules/posts/posts.routes')
 
 const handleRoutes = (app) => {
   app.use('/api/users', userRoutes)

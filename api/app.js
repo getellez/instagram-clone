@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const fileUpload = require('express-fileupload')
 const handleRoutes = require('./src/routes/index');
-const { createMongoConnection } = require('./src/utils/mongo');
 
 
 let app = express();
@@ -51,9 +50,6 @@ app.use(function(err, req, res, next) {
   }
 });
 
-( async () => {
-  console.log('🔥 Initializing this app...');
-  await createMongoConnection()
-})()
+
 
 module.exports = app;

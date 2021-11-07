@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('api:server');
 var http = require('http');
+const { createMongoConnection } = require('../src/utils/mongo');
 const { port } = require('../config/index')
 /**
  * Get port from environment and store in Express.
@@ -81,12 +82,14 @@ function onError(error) {
  * Event listener for HTTP server "listening" event.
  */
 
-function onListening() {
+async function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'
   ? 'pipe ' + addr
   : 'port ' + addr.port;
   debug('Listening on ' + bind);
   console.log(`✅ Server running on ${bind}...`);
+  console.log('🔥 Initializing this app...');
+  await createMongoConnection()
   
 }
