@@ -1,5 +1,7 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+echo "🕵️‍♂️ Checking the code quality..."
 cd ./api
 npm run lint
+echo "🚀 Executing git commit..."
