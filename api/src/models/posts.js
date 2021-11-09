@@ -1,4 +1,5 @@
-const { Schema, model } = require('mongoose')
+
+/* const { Schema, model } = require('mongoose')
 
 const postSchema = Schema({
   username: String,
@@ -13,4 +14,4 @@ const postSchema = Schema({
 
 const Post = model('Post', postSchema)
 
-module.exports = Post
+module.exports = Post */

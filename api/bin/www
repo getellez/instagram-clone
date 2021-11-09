@@ -7,8 +7,10 @@
 var app = require('../app');
 var debug = require('debug')('api:server');
 var http = require('http');
-const { createMongoConnection } = require('../src/utils/mongo');
 const { port } = require('../config/index')
+const { sequelize } = require('../src/utils/mysql');
+const User = require('../src/models/users');
+
 /**
  * Get port from environment and store in Express.
  */
@@ -88,8 +90,13 @@ async function onListening() {
   ? 'pipe ' + addr
   : 'port ' + addr.port;
   debug('Listening on ' + bind);
-  console.log(`✅ Server running on ${bind}...`);
   console.log('🔥 Initializing this app...');
-  await createMongoConnection()
-  
+  console.log(`✅ Server running on ${bind}...`);
+  try {
+    await sequelize.authenticate();
+    await sequelize.sync({ alter: true })
+    console.log('✅ [MYSQL] Connection has been established successfully.');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
 }

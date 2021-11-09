@@ -5,8 +5,9 @@ module.exports = {
   awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID,
   awsSecretKey: process.env.AWS_SECRET_ACCESS_KEY,
   awsS3BucketName: process.env.AWS_S3_BUCKET_NAME,
-  mongoHost: 'localhost' || process.env.MONGO_HOST,
-  mongoPort: '27017' || process.env.MONGO_PORT,
-  mongoDatabase: 'instagram-clone' || process.env.MONGO_DATABASE
+  dbHost: '192.168.0.103' || process.env.DB_HOST,
+  dbName: 'instagram-clone-db' || process.env.DB_DATABASE,
+  dbUser: 'instagram-user' || process.env.DB_USER,
+  dbPassword: 'instagram-s3cr3t' || process.env.DB_PASSWORD
 
 }
