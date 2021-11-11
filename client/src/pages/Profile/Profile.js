@@ -1,22 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 // import { editProfileUrl } from '../../config/routes'
-import { getPostsByUsername } from '../../utils/api'
+import { getPostsByUsername } from '../../api/posts/posts'
 import './Profile.css'
 
 export default function Profile () {
-  // const [userInfo, setUserInfo] = useState({})
   const [posts, setPosts] = useState([])
 
   const loadPostsByUsername = async () => {
-    const res = await getPostsByUsername('germantellezv')
+    const res = await getPostsByUsername('462b4358-4f93-48a4-b942-4e0d550b2526')
     setPosts(res.data)
   }
-
-  /* const getUserData = async () => {
-    const res = await getUser('germantellezv')
-    setUserInfo(res.data)
-  } */
 
   useEffect(() => {
     loadPostsByUsername()
@@ -65,7 +59,7 @@ export default function Profile () {
                 return (
                   <div key={post._id} className='Post__container'>
                     <figure className='Post__figure'>
-                      <img className='Post__image' src={post.photoUrl} alt='' />
+                      <img className='Post__image' src={post.imageUrl} alt='' />
                     </figure>
                   </div>
                 )

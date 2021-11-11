@@ -13,7 +13,7 @@ export default class PostList extends Component {
                 username={post.username}
                 location={post.location}
                 description={post.description}
-                imageUrl={post.photoUrl}
+                imageUrl={post.imageUrl}
               />
             )
           })

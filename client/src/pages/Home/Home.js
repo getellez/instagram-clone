@@ -3,7 +3,7 @@ import PostList from '../../components/PostsList/PostList'
 import StoriesContainer from '../../components/StoriesContainer'
 
 import './Home.css'
-import { getPostsByUsername } from '../../utils/api'
+import { getPostsByUsername } from '../../api/posts/posts'
 
 export default class Home extends Component {
   constructor (props) {
@@ -12,7 +12,7 @@ export default class Home extends Component {
   }
 
   async componentDidMount () {
-    const res = await getPostsByUsername('germantellezv', {})
+    const res = await getPostsByUsername('462b4358-4f93-48a4-b942-4e0d550b2526', {})
     this.setState({ posts: res.data.reverse() })
   }
 

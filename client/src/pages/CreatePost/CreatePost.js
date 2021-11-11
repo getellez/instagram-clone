@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './CreatePost.css'
 import { Button } from '../../components/StyledComponents/Button'
 import { Input } from '../../components/StyledComponents/Input'
-import { createPost } from '../../utils/api'
+import { createPost } from '../../api/posts/posts'
 
 export default function CreatePost () {
   const [fileUploaded, setFileUploaded] = useState(false)
@@ -30,7 +30,7 @@ export default function CreatePost () {
 
       setPost({
         ...post,
-        srcPreview: res.data.filePath
+        srcPreview: res.data.imageUrl
       })
 
       setFileUploaded(true)
@@ -76,7 +76,6 @@ export default function CreatePost () {
             <div className='Form_element'>
               <label>Description</label>
               <Input type='text' name='description' value={post.description} onChange={handleChange} />
-              {/* <input type='text' name='description' value={post.description} onChange={handleChange} /> */}
             </div>
             <div className='Form_element'>
               <label>Upload image</label>
