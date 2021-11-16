@@ -12,5 +12,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
+      - run: cd api && npm ci
       - run: cd api && npm run lint
       - run: cd api && npm run test
