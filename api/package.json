@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "test": "jest .",
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "lint":"standard",
-    "lint:fix":"standard --fix"
+    "lint": "standard",
+    "lint:fix": "standard --fix"
   },
   "dependencies": {
     "aws-sdk": "^2.1009.0",
@@ -22,6 +23,7 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
+    "jest": "^27.3.1",
     "standard": "^16.0.4"
   }
 }
