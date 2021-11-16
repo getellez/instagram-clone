@@ -13,4 +13,4 @@ jobs:
         with:
           node-version: 14
       - run: npm run lint
-      - run: npm run test
+      - run: cd api && npm run test
