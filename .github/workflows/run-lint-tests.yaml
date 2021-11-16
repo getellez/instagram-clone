@@ -1,0 +1,16 @@
+name: "run lint and tests"
+on: 
+  push:
+    branches:
+      - main
+  
+jobs:
+  run_lint_and_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ations/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - run: npm lint
+      - run: npm test
